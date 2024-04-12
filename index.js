@@ -45,7 +45,7 @@ app.get('/api/notes/:id', (request, response) => {
   }
   console.log(note)
 })
-
+console.log('whats up')
 app.delete('/api/notes/:id', (request, response) => {
   const id = Number(request.params.id)
   notes = notes.filter(note => note.id !== id)
