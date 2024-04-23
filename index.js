@@ -1,5 +1,8 @@
 const express = require('express')
 const app = express()
+const cors = require('cors')
+
+app.use(cors())
 
 app.use(express.json())
 
@@ -7,7 +10,7 @@ app.use(express.json())
 let notes = [
   {
     id: 1,
-    content: "HTML is easy",
+    content: "HTML is easy as pie",
     important: true
   },
   {
@@ -23,7 +26,7 @@ let notes = [
 ]
 
 app.get('/', (request, response) => {
-  response.send('<h1> Helldddo Wodddrld! </h1>')
+  response.send('<h1> Helldddo world! </h1>')
 })
 
 app.get('/api/notes', (request, response) => {
@@ -45,7 +48,7 @@ app.get('/api/notes/:id', (request, response) => {
   }
   console.log(note)
 })
-
+console.log('whats up')
 app.delete('/api/notes/:id', (request, response) => {
   const id = Number(request.params.id)
   notes = notes.filter(note => note.id !== id)
@@ -81,6 +84,7 @@ app.post('/api/notes', (request, response) => {
   response.json(note)
 })
 
-const PORT = 3001
-app.listen(PORT)
-console.log(`Server running on port ${PORT}`)
+const PORT = process.env.PORT || 3001
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`)
+})
