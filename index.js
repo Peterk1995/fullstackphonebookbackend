@@ -12,7 +12,7 @@ app.use(express.json())
 let notes = [
   {
     id: 1,
-    content: "HTML is easy as eeee",
+    content: "HTML is easy as eeerre",
     important: true
   },
   {
@@ -28,7 +28,7 @@ let notes = [
 ]
 
 app.get('/', (request, response) => {
-  response.send('<h1> Helldddo world! </h1>')
+  response.send('<h1> Helldddo woeerld! </h1>')
 })
 
 app.get('/api/notes', (request, response) => {
