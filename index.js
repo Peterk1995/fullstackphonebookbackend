@@ -4,13 +4,15 @@ const cors = require('cors')
 
 app.use(cors())
 
+app.use(express.static('dist'));
+
 app.use(express.json())
 
 
 let notes = [
   {
     id: 1,
-    content: "HTML is easy as cake",
+    content: "HTML is easy as eeee",
     important: true
   },
   {
